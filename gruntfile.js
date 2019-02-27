@@ -72,6 +72,16 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'build', [ 'before-build', 'umberto' ] );
 	grunt.registerTask( 'build-serve', [ 'build', 'connect' ] );
 
+	grunt.registerTask( 'docs', function() {
+		grunt.log.error( 'WARNING: \'docs\' task is deprecated please use \'build\' task instead!' );
+		grunt.task.run( 'build' );
+	} );
+
+	grunt.registerTask( 'docs-serve', function() {
+		grunt.log.error( 'WARNING: \'docs-serve\' task is deprecated please use \'build-serve\' task instead!' );
+		grunt.task.run( 'build-serve' );
+	} );
+
 	grunt.initConfig( {
 		path: grunt.option( 'path' ) || getCKEditorPath(),
 
